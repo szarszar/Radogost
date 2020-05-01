@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="form-group">
+        <label form="exampleInputEmail1">Nazwa użytkownika</label>
+        {{form.username}}
+    </div>
+    <div class="form-group">
+        <label form="exampleInputEmail1">Email</label>
+        {{form.email}}
+        <small id="emailHelp" class="form-text text-muted">To jest wersja alpha, ze względów bezpieczeństwa nie podawaj prawdziwego adresu</small>
+    </div>
+    <div class="form-group">
+        <label form="exampleInputPassword1">Hasło</label>
+        {{form.password1}}
+    </div>
+    <div class="form-group form-check">
+        <div class="form-group">
+        <label form="exampleInputPassword1">Potwierdź hasło</label>
+        {{form.password2}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+        {{form.errors}}
+</form>
+{% endblock %}

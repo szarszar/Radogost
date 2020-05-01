@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="login">
+    <div class="row">
+        <form method="POST" action="" class="form-signin mg-btm">
+            {% csrf_token %}
+            <h3 class="heading-desc">
+                Zaloguj się w Radogost</h3>
+            <div class="social-box">
+                <div class="row mg-btm">
+                    <div class="col-md-12">
+                        <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary btn-block">
+                            <i class="icon-facebook"></i>    Login with Facebook
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="btn btn-danger btn-block">
+                            <i class="icon-instagram"></i>    Login with Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <input type="text" name="username" class="form-control" placeholder="Nazwa użytkownika" autofocus>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+                <button type="submit" class="btn btn-large btn-info pull-right">Login</button>
+                <span class="clearfix"></span>
+
+            </div>
+            <div class="login-footer">
+                <div class="row">
+                    {% for message in messages %}
+                    <h5 class="heading-desc">
+                        {{message}}</h5>
+                    {% endfor %}
+                    <div class="col-xs-6 col-md-6">
+                        <div class="left-section">
+                            <hr>
+                            <a href="{% url 'register' %}">Zarejestruj się</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-6 pull-right">
+
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

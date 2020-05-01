@@ -1,0 +1,8 @@
+- datepicker dla CreateEventForm
+- automatyczne ustawienie creatorName na aktualnie zalogowanego użytkownika
+- wyświetlanie wydarzeń na mapie
+- logowanie przez Fejsa i Instagrama
+- PRZEJŚCIE NA JAKĄS PRAWILNĄ BAZĘ DANYCH (czyli nauka sql...)
+- stworzenie podkategorii dla typu eventu (jak ustawić relacje?)
+- możliwość dodawania wydarzeń bezpośrednio z mapy (restrykcje js tylko dla zalogowanych?)
+- generalnie interakcja z mapami (może spróbowac z innym modułem niż leafleet?)

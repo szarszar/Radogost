@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load leaflet_tags %}
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Radogost</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    {% leaflet_js %}
+    {% leaflet_css %}
+</head>
+
+<body>
+
+
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>RADOGOST</h3>
+            <strong>RG</strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="/" aria-expanded="false">
+                    <i class="glyphicon glyphicon-home"></i>
+                    Strona główna
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'new' %}">
+                    <i class="glyphicon glyphicon-search"></i>
+                    W Twojej okolicy
+                </a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                    <i class="glyphicon glyphicon-list"></i>
+                    Według typu
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li><a href="/events/houseparties">Domówki</a></li>
+                    <li><a href="/events/dining">Na talerzu</a></li>
+                    <li><a href="/events/TV">Na ekranie</a></li>
+                    <li><a href="/events/outside">Na świeżym powietrzu</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="glyphicon glyphicon-pushpin"></i>
+                    Wydarzenia Twoich znajomych
+                </a>
+            </li>
+            <li>
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                    Contact
+                </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="https://www.facebook.com/michal.szar">Michał Szarpak</a></li>
+                    <li><a href="mailto:michal.szar@gmail.com">Mail</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li><a href="{% url 'login' %}" class="download">Zaloguj</a></li>
+            <li><a href="{% url 'logout' %}" class="download">Wyloguj</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                        <i class="glyphicon glyphicon-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <p class="text-center font-weight-bold">Hello {{request.user}}</p>
+                        <li><a href="{% url 'profile' %}">Twój profil</a></li>
+                        <li><a href="#">Twoje wydarzenia</a></li>
+                        <li><a href="{% url 'create' %}">Dodaj wydarzenie</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="main">
+            {% block content %}
+            {% leaflet_map "yourmap" %}
+            {% endblock %}
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+ $(document).ready(function () {
+     $('#sidebarCollapse').on('click', function () {
+         $('#sidebar').toggleClass('active');
+     });
+ });
+ </script>
+
+</html>

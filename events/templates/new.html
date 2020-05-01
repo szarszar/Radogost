@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Events</h1>
+<div class="container-fluid">
+    <div class="row">
+        {% for event in events %}
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.name }}</h5>
+                        <p class="card-text">{{ event.description|truncatechars:128 }}</p>
+                        <a href="{% url 'event' event.id %}" class="btn btn-primary">Zobacz więcej</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
