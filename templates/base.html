@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load leaflet_tags %}
 {% load static %}
-<html>
+<html lang="pl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
 
 
 <div class="wrapper">
-    <nav id="sidebar">
+    <nav id="sidebar" aria-label="header">
         <div class="sidebar-header">
             <h3>RADOGOST</h3>
             <strong>RG</strong>
@@ -26,17 +26,17 @@
         <ul class="list-unstyled components">
             <li class="active">
                 <a href="/" aria-expanded="false">
-                    <i class="glyphicon glyphicon-home"></i>
+                    <em class="glyphicon glyphicon-home"></em>
                     Strona główna
                 </a>
             </li>
             <li>
                 <a href="{% url 'new' %}">
-                    <i class="glyphicon glyphicon-search"></i>
+                    <em class="glyphicon glyphicon-search"></em>
                     W Twojej okolicy
                 </a>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                    <i class="glyphicon glyphicon-list"></i>
+                    <em class="glyphicon glyphicon-list"></em>
                     Według typu
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -48,13 +48,13 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="glyphicon glyphicon-pushpin"></i>
+                    <em class="glyphicon glyphicon-pushpin"></em>
                     Wydarzenia Twoich znajomych
                 </a>
             </li>
             <li>
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <em class="glyphicon glyphicon-envelope"></em>
                     Contact
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -71,12 +71,12 @@
     </nav>
     <div id="content">
 
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" aria-label="sidebar">
             <div class="container-fluid">
 
                 <div class="navbar-header">
                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                        <i class="glyphicon glyphicon-align-left"></i>
+                        <em class="glyphicon glyphicon-align-left"></em>
                         <span>Toggle Sidebar</span>
                     </button>
                 </div>

@@ -14,7 +14,7 @@ def new(request):
     return render(request, 'new.html', {'events': events})
 
 
-def loginPage(request):
+def login_page(request):
     if request.method == "POST":
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
@@ -29,12 +29,12 @@ def loginPage(request):
 
     return render(request, 'login.html')
 
-def logoutUser(request):
+def logout_user(request):
     logout(request)
     return redirect('login')
 
 
-def registerPage(request):
+def register_page(request):
     form = CreateUserForm()
 
     if request.method == "POST":
@@ -52,8 +52,9 @@ def registerPage(request):
 def home(request):
     return render(request, 'home.html')
 
+
 @login_required
-def CreateEvent(request):
+def create_event(request):
     form = CreateEventForm()
 
     if request.method == "POST":

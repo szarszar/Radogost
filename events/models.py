@@ -4,7 +4,7 @@ from django.conf import settings
 
 class Events(models.Model):
 
-    TYPE = (
+    TYPES = (
         ('Domówka', 'Domówka'),
         ('Na talerzu', 'Na talerzu'),
         ('Na ekranie', 'Na ekranie'),
@@ -16,7 +16,7 @@ class Events(models.Model):
     date = models.DateTimeField(null=True)
     city = models.CharField(max_length=128, null=True)
     street = models.CharField(max_length=64, null=True)
-    type = models.CharField(max_length=16, null=True, choices=TYPE)
+    type = models.CharField(max_length=16, null=True, choices=TYPES)
     description = models.TextField(default='Napisz coś o swoim wydarzeniu')
     creatorName = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
 
