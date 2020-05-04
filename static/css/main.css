@@ -237,23 +237,23 @@ a.article, a.article:hover {
         display: block;
     }
 
-    #sidebar ul li a {
+    #sidebar ul li a em{
         padding: 20px 10px;
     }
 
-    #sidebar ul li a span {
+    #sidebar ul li a span em{
         font-size: 0.85em;
     }
-    #sidebar ul li a i {
+    #sidebar ul li a i em{
         margin-right:  0;
         display: block;
     }
 
-    #sidebar ul ul a {
+    #sidebar ul ul a em{
         padding: 10px !important;
     }
 
-    #sidebar ul li a i {
+    #sidebar ul li a i em{
         font-size: 1.3em;
     }
     #sidebar {

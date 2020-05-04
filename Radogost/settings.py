@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'leaflet',
     'social_django',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

@@ -3,25 +3,12 @@
 
 <form method="POST" action="">
     {% csrf_token %}
-    <div class="form-group">
-        <label form="exampleInputEmail1">Nazwa użytkownika</label>
-        {{form.username}}
+    {% for form in forms %}
+    <div class="form">
+        <label>{{form.label}} {{form}}</label>
     </div>
-    <div class="form-group">
-        <label form="exampleInputEmail1">Email</label>
-        {{form.email}}
-        <small id="emailHelp" class="form-text text-muted">To jest wersja alpha, ze względów bezpieczeństwa nie podawaj prawdziwego adresu</small>
-    </div>
-    <div class="form-group">
-        <label form="exampleInputPassword1">Hasło</label>
-        {{form.password1}}
-    </div>
-    <div class="form-group form-check">
-        <div class="form-group">
-        <label form="exampleInputPassword1">Potwierdź hasło</label>
-        {{form.password2}}
-    </div>
+    {% endfor%}
     <button type="submit" class="btn btn-primary">Submit</button>
-        {{form.errors}}
+    {{forms.errors}}
 </form>
 {% endblock %}
