@@ -3,22 +3,16 @@
 {% block content %}
 
 <h1>Events</h1>
-<div class="row">
-    <form method="GET">
-        {{my_filter.form}}
-        <input value="submit" type="submit"/>
-    </form>
-</div>
-<hr>
 <div class="container-fluid">
     <div class="row">
         {% for event in events %}
+        <div class="row">
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{ event.name }}</h5>
                         <p class="card-text">{{ event.description|truncatechars:128 }}</p>
-                        <a href="{% url 'event' event.id %}" class="btn btn-primary">Zobacz więcej</a>
+                        <a href="#" class="btn btn-primary">Zobacz więcej</a>
                     </div>
                 </div>
             </div>

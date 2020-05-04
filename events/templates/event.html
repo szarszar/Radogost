@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{event.name}}</h1>
-<h2>{{event.date}}</h2>
-<h3>{{event.type}}</h3>
-<p>{{event.description}}</p>
+{% load leaflet_tags %}
+<div class="card text-white bg-dark mb-3" style="max-width: 75vw;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+        <h5 class="card-title">Dark card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+    </div>
+    <div class="card-footer text-muted border-dark mb-3">
+        {{event.creatorName}}
+    </div>
+</div>
+<hr>
+<hr>
+<div class="event-map" style="max-width: 75vw; max-height: 50px;">
+    {% leaflet_map "yourmap" %}
+</div>
+
 
 {% endblock %}

@@ -1,40 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form method="POST" action="">
-    {% csrf_token %}
-    <div class="form-group">
-        <label form="exampleInputEmail1">Nazwa wydarzenia</label>
-        {{form.name}}
-    </div>
-    <div class="form-group">
-        <label form="exampleInputEmail1">Data</label>
-        {{form.date}}
-    </div>
-    <div class="form-group">
-        <label form="exampleInputPassword1">Miasto</label>
-        {{form.city}}
-    </div>
-    <div class="form-group">
-        <label form="exampleInputPassword1">Ulica i numer</label>
-        {{form.street}}
-    </div>
-    <div class="form-group">
-        <label form="exampleInputPassword1">Rodzaj wydarzenia</label>
-        {{form.type}}
-    </div>
-    <div class="form-group">
-        <label form="exampleInputPassword1">Opis</label>
-        {{form.description}}
-    </div>
-    <div class="form-group">
-        <label form="exampleInputPassword1">user</label>
-        {{form.creatorName}}
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+<hr>
+<div class="container text-center">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-group">
+            <label form="exampleInputEmail1">Nazwa wydarzenia {{form.name}}</label>
+
+        </div>
+        <div class="form-group">
+            <label form="exampleInputEmail1">Data {{form.date}}</label>
+
+        </div>
+        <div class="form-group">
+            <label id="coordinates" form="coordinates">Współrzędne {{form.coordinates}}</label>
+
+        </div>
+        <div class="form-group">
+            <label form="exampleInputPassword1">Miasto {{form.city}}</label>
+
+        </div>
+        <div class="form-group">
+            <label form="exampleInputPassword1">Ulica i numer {{form.street}}</label>
+
+        </div>
+        <div class="form-group">
+            <label form="exampleInputPassword1">Rodzaj wydarzenia {{form.type}}</label>
+
+        </div>
+        <div class="form-group">
+            <label form="exampleInputPassword1">Opis {{form.description}}</label>
+
+        </div>
+        <div class="form-group">
+            <label form="exampleInputPassword1">user {{form.creatorName}}</label>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
         {{form.errors}}
 
-</form>
+    </form>
 
+
+</div>
+
+<hr>
 
 {% endblock %}
